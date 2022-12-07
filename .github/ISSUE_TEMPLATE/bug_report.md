@@ -23,10 +23,10 @@ Welcome to the PyInstaller issue tracker! Before creating an issue, please heed 
 
 ### Context information (for bug reports)
 
-* Output of `pyinstaller --version`: ```(paste here)```
-* Version of Python: <!-- e.g. 3.7 -->
-* Platform: <!-- e.g GNU/Linux (distribution), Windows (language settings), OS X, FreeBSD -->
-* How you installed Python: <!-- e.g. python.org/downloads, conda, brew, pyenv, apt, Windows store -->
+* Output of `pyinstaller --version`: pyinstaller 5.6.2 pyinstaller-hooks-contrib 2022.13
+* Version of Python: python 3.8.5
+* Platform: windows 10
+* How you installed Python: anaconda 2020.11, using base conda
 * Did you also try this on another platform? Does it work there?
 
 
@@ -50,21 +50,16 @@ pip install https://github.com/pyinstaller/pyinstaller/archive/develop.zip
 
 
 ### A minimal example program which shows the error
-
-```
-(paste text here)
-“Minimal“ means: remove everything from your code which is not relevant for this bug,
-esp. don't use external programs, remote requests, etc.
-A very good example is https://gist.github.com/ronen/024cdae9ff2d50488438. This one helped
-us reproducing and fixing a quite complex problem within approx 1 hour.
-```
+i suspect its a pyqt issue, the program converts my previous version and runs smoothly and then stops working, error code 
 
 ### Stacktrace / full error message
 
+Traceback (most recent call last):
+    File "myfilename.py", line 1, in <module>
+        from PyQt5 import QtCore, QtGui, QtWidgets
+ImportError:DLL load failedwhile importing QtCore: the specific procedure could not be found.
+[14292] Failed to execute script 'myfilename' due to unhandled exception!
 
-```
-(paste text here)
-```
 
 Please also see <https://github.com/pyinstaller/pyinstaller/wiki/How-to-Report-Bugs>
 for more about what would use to solve the issue.
